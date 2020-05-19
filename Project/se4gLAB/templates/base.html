@@ -1,0 +1,34 @@
+<!doctype html>
+
+<title>{% block title %}{% endblock %} - SE4G WebApp</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <h1><a href="/index">SE4G WebApp</a></h1>
+
+    {% if g.user %}
+      Welcome {{ g.user[1] }}!
+      <ul>
+      <li><a href="/logout">Log Out</a>
+      <li><a href="/visualization">Visualize Data</a>
+      <li><a href="/statistics">Statistic Analysis</a>
+      <li><a href="/insert_data">Insert Data</a>
+      <li><a href="/blog">Blog</a>
+      </ul>
+    {% else %}
+  <ul>      
+      <li><a href="/register">Register</a>
+      <li><a href="/login">Log In</a>
+    {% endif %}
+  </ul>
+</nav>
+      <hr>
+<section class = "content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class = "flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>
+

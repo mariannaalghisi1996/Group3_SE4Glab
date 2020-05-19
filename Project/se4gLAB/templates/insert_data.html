@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Insert Data{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="species">species</label>
+    <input name="species" id="species" value="{{ request.form['species'] }}" required>
+    <label for="dieback">dieback</label>
+    <input name="dieback" id="dieback" value="{{ request.form['dieback'] }}" required>
+    <label for="diameter">diameter</label>
+    <input name="diameter" id="diameter" value="{{ request.form['diameter'] }}" required>
+    <label for="height">height</label>
+    <input name="height" id="height" value="{{ request.form['height'] }}" required>
+    <label for="latitude">latitude</label>
+    <input name="latitude" id="latitude" value="{{ request.form['latitude'] }}" required>
+    <label for="longitude">longitude</label>
+    <input name="longitude" id="longitude" value="{{ request.form['longitude'] }}" required>
+    <input type="submit" value="Save">
+  </form>
+  
+  
+  If you want to visualize the data contained in our DB click here!:
+  <ul>
+      <li><a href="/DB_visualitazion">DB Visualization</a>
+  </ul>
+{% endblock %}
