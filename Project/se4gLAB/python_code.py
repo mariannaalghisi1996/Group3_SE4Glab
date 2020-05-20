@@ -266,8 +266,8 @@ def insert_data():
                 error = 'Please insert a valid value for height!'
             elif (float(lat)<41.0080 or float(lat)>42.0000):
                 error = 'Sorry but the value of the latitude inserted does not belong to our domain!'
-            elif (float(lon)>-86.62 or float(lon)<-86.70000):
-                error = 'Sorry but the value of the longitude inserted does not belong to our domain!'
+            #elif (float(lon)>-86.62 or float(lon)<-86.70000):
+            #    error = 'Sorry but the value of the longitude inserted does not belong to our domain!'
             if error is not None :
                 flash(error)
                 return redirect(url_for('insert_data'))
