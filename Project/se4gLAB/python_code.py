@@ -301,8 +301,13 @@ def statistics():
 @app.route('/DB_visualization')
 def visualize_your_data():
     if load_logged_in_user():
-        bokeh_yourdata.funct_DB_visua()
-        return render_template('yourData_map.html')
+        x = bokeh_yourdata.funct_DB_visua()
+        if x == None:
+            return render_template('yourData_map.html')
+        else:
+            error = 'Something went wrong!"
+            flash(error)
+            return render_template('index.html')
     else:
         error = 'Only logged in users can visualize this map!'
         flash(error)
