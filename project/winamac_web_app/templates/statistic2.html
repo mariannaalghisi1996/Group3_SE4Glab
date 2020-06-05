@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{%if g.user %}
+{% block header %}
+  <h1>{% block title %}Statistic Analysis{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <label for="username">
+<body bgcolor="#bbd0c9">
+  <p>
+    In this page it is possible to retrieve statistical information about the distribution of the 
+    diameter and the height of Winamac's trees. <br>
+    In particular this statistical analysis refers only to the data collected through Epicollect5, in order to get a clear survay of Winamac's trees in summer 2019. <br>
+    Before the computation, the sample of data has been filtered: all the entries that were missing information about the diameter or the height (diameter = 0 or height = 0) have been eliminated from the sample.
+  </p>
+  <p>
+    <h1>Distribution of the diameter</h1>
+    <img src="static/scatter_diam.png" style="float: centered" height="330" width="380" vspace="30"><br>
+   This plot shows the scatter of the value diameter in a map. On the axes there are latitude and longitude values; diameter values are represented with a marker color according to the bar next to the graph.
+  </p>
+  <p>
+    <h1>Distribution of the height</h1>
+    <img src="static/scatter_height.png" style="float:centered" height="330" width="380" vspace="30"><br>
+     This plot shows the scatter of <br> the value height in a map. On the axes there are latitude and longitude values; height values are represented with a marker color according to the bar next to the graph.
+  </p>
+  <p>
+    <h1>Subplot Distribution</h1>
+    <img src="static/subplot_distribution.png" style="float:centered" height="330" width="380" vspace="30"><br>
+    <p>This subplot shows the <br> univariate distribution of the three attributes (height, diameter and dieback ). The function draws an histogram -that represents the distribution of data- and fit a kernel density estimate (KDE)- that visualize the density function-. 
+    </p>
+  <p>
+    If you are interested in more information about the statistical analysis of the data check these pages!<b>
+    <li><a href="/pie_chart">Pie Chart</a>
+    <li><a href="/isto_dinamico">Dynamic Histogram</a>
+</div>
+</label>
+  </form>
+{% endblock %}
+{% endif %}

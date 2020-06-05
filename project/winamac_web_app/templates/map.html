@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{%if g.user %}
+{% block header %}
+  <h1>{% block title %}Dynamic Plot{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <label for="username">
+<body bgcolor="#bbd0c9">
+  <p>
+   In the new page authomatically opened in the browser, it is possible to visualize a geographic map of Winamac City.
+   The blue points rapresent the data collected by the users and contained in a postreSQL database, 
+   the red points contain the data retrieved throug Epicollect5. <br>
+   
+   The Epicollect5 Database contained almost 1350 entries collected from 1 August 2018 to 30 June 2019. In the map it is possible to see a sample of them, 
+   in order to obtain a more undertandable and usable data visualization.<br>
+   </p>
+   <p>
+   
+    The interactive map is developed by using Python's Bokeh library.
+    Each point corresponds to a tree. By browsing with the cursor on each point you can have information on the diameter, height, species and dieback percentage of the tree.
+   </p>
+   <p>
+   Do you want to help us updating our database? Upload your data of Winamac's trees here!
+   <li><a href="/insert_data">Insert Data</a>
+  
+</div>
+</label>
+  </form>
+{% endblock %}
+{% endif %}

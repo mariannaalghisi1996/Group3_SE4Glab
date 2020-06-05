@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Istogramma Dinamico</title>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:700);
+brcolor = #bbd0c9
+body{
+    text-align: left;
+}
+h1{
+    font-family: 'Amatic';
+    font-weight: normal;
+    color: #35682D;
+    font-size: 3em;
+}
+p{
+    font-size: 1.15em;}
+</style>
+</head>
+<body>
+ <h1>Dynamic Histogram</h1>
+ <p>In this page it is possible to interact with a dynamic histogram that plot, for each street, 
+    the mean value of diameter, height and dieback percentage.<br>
+    You can choose the attribute you're interested in through the widget on the left, the result will be
+    authomatically plotted in the histogram on the right.<br>
+    The plot has been produced by using the Bokeh library. It has been developed starting from the data collected throug Epicollect5.<br>
+    The sample of data has been cleaned from uncorrect entries: all the entries that were missing information about the diameter or the height (diameter = 0 or height = 0) have been eliminated from the sample. <br>
+    In addition, all the data are grouped by the name of the street they belong to. In particular the data have been grouped in 10 main streets, 
+    all the data that report a different specific address have been grouped in the class 'Other Streets'.</p>
+{{ bokS|indent(4)|safe }}
+</body>
+</html>

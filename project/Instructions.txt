@@ -1,0 +1,9 @@
+1) Open the file dBconfig.txt in the folder winamac_web_app, modify it by inserting the name of you're 
+   postgreSQL database, username and password
+2) Open the anaconda terminal and activate the environment with the command: conda activate se4g
+3) Navigate to the folder containing the project with the command: cd **your path**\project\winamac_web_app
+4) Initialize the database with the command: python DBschema.py
+5) Launch the program with the command: python python_code.py
+6) Open the browser at http:\127.0.0.1:5000\
+
+Thank you very much
